@@ -3,6 +3,7 @@ import pandas as pd
 from flask_cors import CORS # CORS for handling Cross-Origin Resource Sharing
 import pickle 
 import model
+from waitress import serve
 
 # Create a Flask application instance
 app = Flask(__name__)
@@ -65,4 +66,4 @@ def predictUsers():
         return jsonify({'error': str(e)})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run()
