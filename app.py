@@ -38,7 +38,7 @@ def recommenduser(user):
     index = users[users['username'] == user].index[0]
     distances = sorted(list(enumerate(similarityUser[index])), reverse=True, key = lambda x: x[1])
     recommended_users = []
-    for i in distances[1:10]:
+    for i in distances[1:5]:
         recommended_users.append(users.iloc[i[0]].username)
         print(users.iloc[i[0]].username)
     return recommended_users
